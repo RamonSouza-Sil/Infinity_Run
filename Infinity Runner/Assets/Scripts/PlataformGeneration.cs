@@ -6,7 +6,9 @@ public class PlataformGeneration : MonoBehaviour
 {
     public GameObject Platform;
     public Transform point;
-    public float Distance;
+   
+
+    public float minDistance, maxDistance;
 
     private float platWidth;
     void Start()
@@ -27,7 +29,7 @@ public class PlataformGeneration : MonoBehaviour
     {
         if (transform.position.x < point.position.x)
         {
-            Distance = Random.Range(2, 6);
+            float Distance = Random.Range(minDistance, maxDistance);
 
             transform.position = new Vector3(transform.position.x + platWidth + Distance, transform.position.y, transform.position.x);
 
